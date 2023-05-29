@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="container-fluid">
+        <div class="row my-4">
+            <div class="col-sm-6 order-sm-2 blog-heading">
+                <i class="fas fa-spa icon"></i>
+                <h2>{% block title %} {{ object.title }} {% endblock title %}</h2>
+                <h5><i class="far fa-clock"></i> {{ post.author }} | {{ post.created_on }}</h5>
+                <img src="/media/sattvic-table.jpg" alt="table of healthy sattvic vegetables" class="responsive">
+            </div>
+            <div class="col-sm-6 order-sm-2 blog">
+                <p>{{ object.content | safe }}
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <img src="assets/images/sattvic-bowl.jpg" alt="healthy bowl of sattvic food" class="responsive img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="assets/images/sattvic-green.jpg" alt="bowl of healthy sattvic vegetables" class="responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Sign up -->
+<div class="container-fluid bg-color-sign-up">
+    <div class="row">
+        <div class="col sign-up-container-text px-8 py-4">
+            <h2>Sign up to the blog!</h2>
+            <p>Keep up to date with everything yoga, from our carefully curated blogs released every month, to all
+                the
+                news and information about yoga in Bristol.</p>
+        </div>
+    </div>
+    <form id="form">
+        <div class="row">
+            <div class="col-sm sign-up-container-form">
+                <input type="text" class="form-control" placeholder="First name" required aria-label="First name">
+            </div>
+            <div class="col-sm sign-up-container-form">
+                <input type="text" class="form-control" placeholder="Last name" required aria-label="Last name">
+            </div>
+            <div class="col-sm-4 sign-up-container-form">
+                <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required aria-label="Email address">
+            </div>
+            <div class="col-sm-2 sign-up-container-form">
+                <button type="submit" class="btn btn-primary btn-submit">Sign up to the blog!</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- Blog 2 -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 order-sm-2">
+            <div class="prin-blog">
+                <i class="fas fa-spa icon"></i>
+                <h2>The 5 principles of Yoga explained</h2>
+                <h5><i class="far fa-clock"></i> Post by Lorna Fox, Oct 23, 2021.</h5>
+            </div>
+            <img src="assets/images/backlit-beach-dawn-dusk-588561.jpg" alt="yoga in fron of the sea at dawn" class="responsive">
+        </div>
+        <div class="col-sm-6 order-sm-1 prin-blog-text">
+            <p>What are the five principles and how can they help us? The five principles of yoga are proper
+                relaxation, proper exercise, proper breathing, a proper diet and positive thinking and mediation.
+                It's almost like thinking of our body as a car - we need to rest our car, but we also need to drive
+                it, we need to ensure we put the right fuel into our car and we need to make sure we carry out a
+                regular service to our car, ensuring it stays positive and on the road. The five principles do the
+                same. Proper relaxation ensures we release tensions in the muscles and rests our whole system,
+                helping us to be refreshed - a bit like after a really good night's sleep. Proper relaxation can
+                carry on through our daily life, helping us know when to let go of worries or fears. In our
+                Sivananda practise, we punctuate our asanas with proper relaxation and end our sessions with a deep,
+                final relaxation - for some, this is the best part of our practise! Proper exercise is our yoga
+                postures, or asanas. They work systematically on all sections of our body, stretching, flexing and
+                toning the muscles and ligaments, keeping the spine and joints flexible and improving the
+                circulation. Proper breathing is helped by our pranayama and means breathing fully and rhythmically,
+                making use of all of our lungs to intake oxygen. Pranayama, yogic breathing, helps to recharge your
+                body, calm the mind and regulate the flow of prana - the life force. A proper diet, ideally the
+                sattvic diet, is well-balanced and nourishing and is based on natural, non-stimulating foods. It
+                keeps the body light, the mind calm and gives resistance to disease. It also helps in our
+                flexibility and our strength. As our Swami wisely said in the ashram - "at mealtime, fill your
+                stomach half full with food, a quarter with water and leave the other quarter for gas"! Find out
+                more about the sattvic diet in my other blog. And finally, positive thinking and meditation - two
+                powerful practises that help to remove negative thoughts, still the mind and support us to observe
+                the world around us - bringing us to a place of calm and inner peace.
+        </div>
+    </div>
+    <section id="prin-photos">
+        <div class="row d-flex my-3">
+            <div class="col">
+                <img src="assets/images/male-pose.jpg" alt="man focussed yoga pose" style="width:100%">
+            </div>
+            <div class="col d-none d-sm-block">
+                <img src="assets/images/budha.jpg" alt="yogic budha statue" style="width:100%">
+            </div>
+            <div class="col">
+                <img src="assets/images/water-lily.jpg" alt="water lily in full bloom" style="width:100%">
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

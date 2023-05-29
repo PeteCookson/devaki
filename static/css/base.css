@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&family=Merriweather:wght@300;400;900&display=swap');
+
+* {
+    font-size: 10px;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+p {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+h2 {
+    font-family: "Merriweather", sans-serif;
+    font-size: 2.5rem;
+}
+
+h5 {
+    font-family: "Merriweather", sans-serif;
+    font-weight: 500;
+}
+
+/*--------------------------------------------Navbar*/
+.container-fluid-navbar {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.nav-font {
+    font-size: 1.7rem;
+}
+
+.nav-item {
+    padding-left: 4rem;
+    text-align: right;
+}
+
+.navbar {
+    background-color: #dadada;
+    padding: 2rem 2rem;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    width: 3rem !important;
+    height: 3rem !important;
+}
+
+#navbarNav a:hover {
+    color: #dd9208;
+    border-bottom: 1px solid #dd9208;
+}
+
+.active {
+    border-bottom: 1px solid #dd9208;
+}
+
+/*--------------------------------------------Hero Image*/
+.callout-container {
+    height: 100vh;
+    background: url('/media/silhouette-mobile.jpg') center no-repeat;
+    background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: flex-end;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.opac-back {
+    background-color: #8f8f8f;
+    opacity: 0.6;
+}
+
+/*-------------------------------------------- Jumbotron*/
+.jumbotron {
+    background: transparent;
+}
+
+.jumbotron-header {
+    font-family: "Merriweather", sans-serif;
+    font-size: 6rem;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+.jumbotron h4 {
+    color: white;
+    font-size: 3rem
+}
+
+.jumbotron .lead {
+    margin: 2.5rem 0;
+    color: #a7a7a7;
+}
+
+.jumbotron small {
+    font-size: 60%;
+    font-style: italic;
+    color: #d0d0d0;
+}
+
+/*--------------------------------------------Sign-up Container*/
+.sign-up-container-text {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+}
+
+.sign-up-container-form {
+    margin-bottom: 2rem;
+}
+
+.bg-color-sign-up {
+    background-color: #dadada;
+    padding: 0 4rem;
+}
+
+.btn-submit {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #fafafa;
+    background-color: #dd9208;
+    border-color: #dd9208;
+}
+
+.btn-submit:hover {
+    background-color: #8f8f8f;
+    border-color: #8f8f8f;
+}
+
+.form-control {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+/*--------------------------------------------Info box*/
+.icon {
+    font-size: 4rem;
+    padding: 2rem;
+}
+
+.info-box-1,
+.info-box-2 {
+    display: block;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+/*--------------------------------------------Testimonials*/
+.testimonial {
+    text-align: center;
+    background-color: #dadada71;
+}
+
+.rounded-circle {
+    height: 200px;
+    width: 200px;
+}
+
+.testimonial h2 {
+    font-family: "Merriweather", sans-serif;
+    font-size: 2.5rem;
+    padding: 2rem;
+}
+
+.name {
+    font-weight: 500;
+    text-align: justify;
+    margin-bottom: 0;
+    padding: 0 0 2rem 2rem;
+    font-size: 1.6rem;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 0;
+    padding: 1rem;
+}
+
+/*--------------------------------------------Footer*/
+a:link {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover {
+    color: #dd9208;
+}
+
+.map-link {
+    font-size: 1.4rem;
+}
+
+#footer-details {
+    margin: 0;
+    padding: 2rem;
+    font-size: 1.2rem;
+}
+
+.footer-logo {
+    padding: 2rem;
+}
+
+.address li {
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.contact-info-email,
+.contact-info-mobile {
+    margin-bottom: 1rem;
+}
+
+.email,
+.mobile {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-left: 1rem;
+}
+
+.fa-envelope,
+.fa-phone {
+    font-size: 1.6rem;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.social-links li a i {
+    width: 4rem;
+    height: 4rem;
+    padding: 1.2rem 0;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #fafafa;
+    background: #8f8f8f;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.social-links li a i:hover {
+    background: #dd9208;
+}
+
+.social {
+    margin: 0 .7rem;
+}
+
+.input-group {
+    margin-bottom: 2rem;
+}
+
+#button-footer {
+    padding-right: .5rem;
+    padding-left: .5rem;
+}
+
+/*--------------------------------------------About Us*/
+.lorna,
+.jane,
+.schedule {
+    font-family: "Merriweather", sans-serif;
+    font-size: 2.5rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.bg-color-profile {
+    background-color: #dadada;
+}
+
+.profile p {
+    margin: 0;
+    padding: 2rem 2rem 0 2rem;
+}
+
+#lorna-photos {
+    padding-right: 0;
+    -o-object-fit: scale-down;
+    object-fit: scale-down;
+}
+
+#jane-photos {
+    padding-bottom: 0.1rem;
+    -o-object-fit: scale-down;
+    object-fit: scale-down;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+.teacher-pics {
+    float: left;
+    width: 25%;
+    padding: 5px;
+}
+
+.schedule h1 i {
+    font-family: "Merriweather", sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.bg-color-schedule {
+    background-color: #dadada;
+    ;
+}
+
+#schedule {
+    margin: 0 40px 10px 40px;
+}
+
+.block-divider {
+    width: 50%;
+    margin: auto;
+    border: 0;
+    border-bottom: 2px solid #dd9208;
+}
+
+.table th,
+td {
+    font-family: "Lato", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    border-color: #8f8f8f !important;
+}
+
+/*--------------------------------------------Blog*/
+.blog,
+.prin-blog-text {
+    padding: 2rem;
+}
+
+.prin-blog {
+    font-family: "Merriweather", sans-serif;
+    font-size: 2.5rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.blog-heading {
+    font-family: "Merriweather", sans-serif;
+    font-size: 2.5rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.blog-heading img {
+    border: 0;
+    vertical-align: bottom;
+}
+
+/*--------------------------------------------Media Queries*/
+@media screen and (min-width: 768px) {
+    .callout-container {
+        background: url("/media/silhouette.jpg") no-repeat fixed center;
+        max-width: 100%;
+        max-height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .table th,
+    .table td {
+        font-size: 1.6rem;
+        font-weight: 300;
+    }
+
+    #schedule p {
+        text-align: center;
+        width: 75%;
+        margin: auto;
+        padding-bottom: 2rem;
+    }
+
+    #prin-photos img {
+        height: 400px;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    .prin-blog-text p {
+        padding: 10rem 2rem 2rem;
+    }
+
+    .profile p {
+        padding: 6rem;
+    }
+}
