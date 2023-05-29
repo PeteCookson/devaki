@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar sticky-top navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand logo" href="index.html">
+            <a class="navbar-brand logo" href="#">
                 <img src="/media/logo.png" alt="Logo for Devaki Yoga" style="width: 200px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -12,10 +12,10 @@
                         <a class="nav-font nav-link active" href="{% url 'home' %}">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-font nav-link" href="{% url 'about' %}">ABOUT</a>
+                        <a class="nav-font nav-link" href="{% url 'about' %}" id="about">ABOUT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-font nav-link" href="{% url 'blog:home' %}">BLOG</a>
+                        <a class="nav-font nav-link" href="#">BLOG</a>
                     </li>
                 </ul>
             </div>
