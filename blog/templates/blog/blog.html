@@ -2,23 +2,40 @@
 {% load static %}
 
 {% block content %}
-<section>
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 left">
+            {% for post in posts %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                    <p class="card-text">{{post.content|slice:":200" }}</p>
+                    <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div> -->
+<!-- <section>
     <div class="container-fluid">
+        {% for post in posts %}
         <div class="row my-4">
             <div class="col-sm-6 order-sm-2 blog-heading">
                 <i class="fas fa-spa icon"></i>
-                <h2>A beginners guide to the Sattvic diet</h2>
-                <h5><i class="far fa-clock"></i> Post by Lorna Fox, Dec 11, 2021.</h5>
-                <img src="/media/sattvic-table.jpg" alt="table of healthy sattvic vegetables" class="responsive">
+                <h2>{{ post.title }}</h2>
+                <h5><i class="far fa-clock"></i> {{ post.author }} | {{ post.created_on}} </h5>
+                <img src="/media/{{post.image}}" alt="table of healthy sattvic vegetables" class="responsive">
             </div>
             <div class="col-sm-6 order-sm-2 blog">
-                {% for post in post_list %}
+                {% for post in posts %}
                 <div class="card mb-4">
                     <div class="card-body">
                         <h2 class="card-title">{{ post.title }}</h2>
                         <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
                         <p class="card-text">{{post.content|slice:":200" }}</p>
-                        <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                        <a href="#" class="btn btn-primary">Read More &rarr;</a>
                     </div>
                 </div>
                 {% endfor %}
@@ -32,10 +49,90 @@
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
 </section>
+{% for post in posts %}
+<section>
+    <div class="container-fluid">
+        <div class="row my-4">
+            <div class="col-sm-6 order-sm-2 blog-heading">
+                <i class="fas fa-spa icon"></i>
+                <h2>{{ post.title }}</h2>
+                <h5><i class="far fa-clock"></i> {{ post.author }} | {{ post.created_on}} </h5>
+                <img src="/media/{{post.image}}" class="card-img-top" alt="..." class="responsive">
+            </div>
+            <div class="col-sm-6 order-sm-2 blog">
+                <p>{{post.content| truncatechars:210}}
+                </p>
+                <a href="{{post.slug}}" class="btn btn-primary">Read More {% if user.is_superuser %}<a href="delete_blog_post/{{post.slug}}/" class="btn btn-danger mx-4">Delete Blog</a>{% endif %}</a>
+                <div class="row">
+                    <div class="col">
+                        <img src="/media/sattvic-bowl.jpg" alt="healthy bowl of sattvic food" class="responsive img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="/media/sattvic-green.jpg" alt="bowl of healthy sattvic vegetables" class="responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %} -->
+
+<div class="container mt-5 mb-3">
+    {% for post in posts %}
+    <div class="row ">
+        <div class="col-8 mb-4">
+            <div class="card-header text-center">
+                by {{post.author}}
+            </div>
+            <div class="card text-center shadow">
+                <img src="/media/{{post.media}}" class="card-img-top" alt="..." width="100%">
+                <div class="card-body">
+                    <h5 class="card-title">{{post.title}} </h5>
+                    <p class="card-text">{{post.content| truncatechars:210}}</p>
+                    <a href="{{post.slug}}" class="btn btn-primary">Read More {% if user.is_superuser %}<a href="delete_blog_post/{{post.slug}}/" class="btn btn-danger mx-4">Delete Blog</a>{% endif %}</a>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">{{post.created_on}}</small>
+                </div>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-sm-6 order-sm-2 blog-heading">
+                <i class="fas fa-spa icon"></i>
+                <h2>{{ post.title }}</h2>
+                <h5><i class="far fa-clock"></i> {{ post.author }} | {{ post.created_on}} </h5>
+                <img src="/media/{{post.image}}" alt="table of healthy sattvic vegetables" class="responsive">
+            </div>
+            <div class="col-sm-6 order-sm-2 blog">
+                {% for post in posts %}
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                        <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                        <p class="card-text">{{post.content|slice:":200" }}</p>
+                        <a href="{{post.slug}}" class="btn btn-primary">Read More {% if user.is_superuser %}<a href="delete_blog_post/{{post.slug}}/" class="btn btn-danger mx-4">Delete Blog</a>{% endif %}</a>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="row">
+                    <div class="col">
+                        <img src="/media/sattvic-bowl.jpg" alt="healthy bowl of sattvic food" class="responsive img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="/media/sattvic-green.jpg" alt="bowl of healthy sattvic vegetables" class="responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 <!-- Sign up -->
-<div class="container-fluid bg-color-sign-up">
+<!-- <div class="container-fluid bg-color-sign-up">
     <div class="row">
         <div class="col sign-up-container-text px-8 py-4">
             <h2>Sign up to the blog!</h2>
@@ -60,9 +157,9 @@
             </div>
         </div>
     </form>
-</div>
+</div> -->
 <!-- Blog 2 -->
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <div class="row">
         <div class="col-sm-6 order-sm-2">
             <div class="prin-blog">
@@ -73,28 +170,7 @@
             <img src="/media/backlit-beach-dawn-dusk-588561.jpg" alt="yoga in fron of the sea at dawn" class="responsive">
         </div>
         <div class="col-sm-6 order-sm-1 prin-blog-text">
-            <p>What are the five principles and how can they help us? The five principles of yoga are proper
-                relaxation, proper exercise, proper breathing, a proper diet and positive thinking and mediation.
-                It's almost like thinking of our body as a car - we need to rest our car, but we also need to drive
-                it, we need to ensure we put the right fuel into our car and we need to make sure we carry out a
-                regular service to our car, ensuring it stays positive and on the road. The five principles do the
-                same. Proper relaxation ensures we release tensions in the muscles and rests our whole system,
-                helping us to be refreshed - a bit like after a really good night's sleep. Proper relaxation can
-                carry on through our daily life, helping us know when to let go of worries or fears. In our
-                Sivananda practise, we punctuate our asanas with proper relaxation and end our sessions with a deep,
-                final relaxation - for some, this is the best part of our practise! Proper exercise is our yoga
-                postures, or asanas. They work systematically on all sections of our body, stretching, flexing and
-                toning the muscles and ligaments, keeping the spine and joints flexible and improving the
-                circulation. Proper breathing is helped by our pranayama and means breathing fully and rhythmically,
-                making use of all of our lungs to intake oxygen. Pranayama, yogic breathing, helps to recharge your
-                body, calm the mind and regulate the flow of prana - the life force. A proper diet, ideally the
-                sattvic diet, is well-balanced and nourishing and is based on natural, non-stimulating foods. It
-                keeps the body light, the mind calm and gives resistance to disease. It also helps in our
-                flexibility and our strength. As our Swami wisely said in the ashram - "at mealtime, fill your
-                stomach half full with food, a quarter with water and leave the other quarter for gas"! Find out
-                more about the sattvic diet in my other blog. And finally, positive thinking and meditation - two
-                powerful practises that help to remove negative thoughts, still the mind and support us to observe
-                the world around us - bringing us to a place of calm and inner peace.
+            <p>
         </div>
     </div>
     <section id="prin-photos">
@@ -110,5 +186,5 @@
             </div>
         </div>
     </section>
-</div>
+</div> -->
 {% endblock %}
