@@ -8,9 +8,13 @@
 # ]
 from django.contrib import admin
 from django.urls import path
-from blog import views #here 
+from django.conf import settings
+from django.conf.urls.static import static
+from blog import views
+
+app_name = 'blog'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.blog, name='blog'), #here 
-]
+    path('', views.blog_list, name='blog_list'), #here 
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

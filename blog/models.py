@@ -37,7 +37,6 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=100, unique=True)
     content = models.TextField()
-    images = models.ManyToManyField('Image', blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
@@ -56,6 +55,7 @@ class Post(models.Model):
 
 class Image(models.Model):
     image = models.ImageField(upload_to="images")
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, null=True, default=None)  # Add the default value here
 
     def __str__(self):
         return self.image.name
