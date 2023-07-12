@@ -10,8 +10,13 @@
 #     template_name = 'post_detail.html'
 from django.shortcuts import render
 from .models import Post
+from django.views import generic
 
 # Create your views here.
 def blog_list(request):
     posts = Post.objects.all()
     return render(request, 'blog/blog.html', {'posts': posts})
+
+class BlogDetail(generic.DetailView):
+    model = Post
+    template_name = 'blog/blog_detail.html'

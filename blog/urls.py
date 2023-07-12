@@ -16,5 +16,6 @@ app_name = 'blog'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.blog_list, name='blog_list'), #here 
+    path('', views.blog_list, name='blog_list'),
+    path('<slug:slug>/', views.BlogDetail.as_view(), name='blog_detail'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

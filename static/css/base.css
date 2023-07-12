@@ -41,6 +41,7 @@ h5 {
 .navbar {
     background-color: #dadada;
     padding: 2rem 2rem;
+    width: 100%;
 }
 
 .navbar-toggler .navbar-toggler-icon {
@@ -62,7 +63,7 @@ h5 {
     height: 100vh;
     background: url('/media/silhouette-mobile.jpg') center no-repeat;
     background-size: cover;
-    display: -webkit-box;
+    */ display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
@@ -148,11 +149,32 @@ h5 {
     padding: 2rem;
 }
 
+/*--------------------------------------------Container adjustments*/
+.container-fluid.col-lg-8.col-md-12.col-12 {
+    max-width: 1600px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 1600px) {
+    .container-fluid.col-lg-8.col-md-12.col-12 {
+        width: 87.5%;
+    }
+}
+
 .info-box-1,
 .info-box-2 {
     display: block;
     text-align: center;
     padding-bottom: 2rem;
+}
+
+/*--------------------------------------------Blog*/
+.container {
+    margin: 0 auto;
 }
 
 /*--------------------------------------------Testimonials*/
