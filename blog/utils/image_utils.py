@@ -1,7 +1,7 @@
 from PIL import Image
 import os
 
-def resize_image(image, max_size=(800, 800)):
+def resize_image(image, max_size=(600, 600)):
     img = Image.open(image)
 
     # Resize the image while maintaining the aspect ratio

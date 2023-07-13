@@ -19,13 +19,14 @@
         <p>Keep up to date with everything yoga, from our carefully curated blogs released every month, to all the
             news and information about yoga in Bristol.</p>
     </div>
-    <form id="form">
+    <form id="form" action="#" method="post">
         <div class="row">
+            {% csrf_token %}
             <div class="col-sm sign-up-container-form">
-                <input type="text" class="form-control" placeholder="First name" required aria-label="First name">
+                <input id="first_name" name="first_name" class="form-control" placeholder="First Name" />
             </div>
             <div class="col-sm sign-up-container-form">
-                <input type="text" class="form-control" placeholder="Last name" required aria-label="Last name">
+                <input id="last_name" name="last_name" class="form-control" placeholder="Last Name" />
             </div>
             <div class="col-sm-4 sign-up-container-form">
                 <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required aria-label="Email address">
@@ -36,6 +37,33 @@
         </div>
     </form>
 </div>
+<!-- {% if not user.is_authenticated %}
+            <section class="">
+                <form action="{% url 'subscribe' %}" method="post">
+                    <div class="row d-flex justify-content-center">
+                    {% csrf_token %}
+
+                        <div class="col-auto">
+                            <p class="pt-2">Subscribe for our newsletter</p>
+                        </div>
+
+                        <div class="col-auto">
+                            <input id="name" name="name" class="form-control" placeholder="Your Name"/>
+                        </div>
+
+                        <div class="col-auto">
+                            <input id="email" name="email" type="email" class="form-control" placeholder="Email address"/>
+                        </div>
+
+                        <div class="col-auto">
+                            <button type="submit" class="btn btncolor">
+                                <i class="fa fa-arrow-circle-right fa-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        {% endif %} -->
 <!-- Info section -->
 <section>
     <div class="container-fluid">
