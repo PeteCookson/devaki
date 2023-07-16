@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-!0rt5cz@=ev5el0rf-kgny#^zz+ktc17^u#864+9$_spjmydke
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-petecookson-devaki-dhqzoj89etx.ws-eu101.gitpod.io', 'localhost']
-CSRF_TRUSTED_ORIGINS = ['https://8000-petecookson-devaki-dhqzoj89etx.ws-eu101.gitpod.io']
+ALLOWED_HOSTS = ['8000-petecookson-devaki-wlvxoam8xbb.ws-eu101.gitpod.io', 'localhost']
+CSRF_TRUSTED_ORIGINS = ['https://8000-petecookson-devaki-wlvxoam8xbb.ws-eu101.gitpod.io']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'home',
     'about',
     'blog',
@@ -133,3 +134,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Crispy Forms settings
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

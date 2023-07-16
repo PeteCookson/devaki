@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+
+{% load crispy_forms_tags %}
 <!-- Jumbotron -->
 <div class="callout-container container-fluid">
     <div class="opaque-overlay">&nbsp;</div>
@@ -20,15 +22,18 @@
             news and information about yoga in Bristol.</p>
     </div>
     <form id="form" action="#" method="post">
+        {% csrf_token %}
         <div class="row">
-            {% csrf_token %}
             <div class="col-sm sign-up-container-form">
+                <label for="first_name">First Name:</label>
                 <input id="first_name" name="first_name" class="form-control" placeholder="First Name" />
             </div>
             <div class="col-sm sign-up-container-form">
+                <label for="last_name">Last Name:</label>
                 <input id="last_name" name="last_name" class="form-control" placeholder="Last Name" />
             </div>
             <div class="col-sm-4 sign-up-container-form">
+                <label for="email">Email address:</label>
                 <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required aria-label="Email address">
             </div>
             <div class="col-sm-2 sign-up-container-form">
@@ -39,7 +44,7 @@
 </div>
 <!-- {% if not user.is_authenticated %}
             <section class="">
-                <form action="{% url 'subscribe' %}" method="post">
+                <form action="#" method="post">
                     <div class="row d-flex justify-content-center">
                     {% csrf_token %}
 
