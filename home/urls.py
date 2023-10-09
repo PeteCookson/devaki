@@ -5,4 +5,5 @@ app_name = 'home'
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('subscribe/', views.subscribe_user, name='subscribe_user'),
 ]

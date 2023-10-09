@@ -17,11 +17,11 @@
 <!--Sign-up -->
 <div class="container-fluid bg-color-sign-up">
     <div class="sign-up-container-text px-8 py-4">
-        <h2>Sign up to the blog!</h2>
+        <h2>Sign up to the Newsletter!</h2>
         <p>Keep up to date with everything yoga, from our carefully curated blogs released every month, to all the
             news and information about yoga in Bristol.</p>
     </div>
-    <form id="form" action="" method="post">
+    <form id="form" action="{% url 'home:subscribe_user' %}" method="post">
         {% csrf_token %}
         <div class="row">
             <div class="col-sm sign-up-container-form">
@@ -34,7 +34,7 @@
                 <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required aria-label="Email address">
             </div>
             <div class="col-sm-2 sign-up-container-form">
-                <button type="submit" class="btn btn-primary btn-submit">Sign up to the blog!</button>
+                <button type="submit" class="btn btn-primary btn-submit">Sign up to the Newsletter!</button>
             </div>
         </div>
     </form>
