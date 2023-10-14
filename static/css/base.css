@@ -63,7 +63,7 @@ h5 {
     height: 100vh;
     background: url('/media/silhouette-mobile.jpg') center no-repeat;
     background-size: cover;
-    */ display: -webkit-box;
+    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
@@ -107,6 +107,39 @@ h5 {
     font-size: 60%;
     font-style: italic;
     color: #d0d0d0;
+}
+
+css Copy
+
+/*------------------------------------ CSS for the modal popup */
+.modal-content {
+    border-radius: 0;
+}
+
+.modal-header {
+    background-color: #f8f9fa;
+    border-bottom: none;
+}
+
+.modal-title {
+    color: #333;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #5a6268;
 }
 
 /*--------------------------------------------Sign-up Container*/

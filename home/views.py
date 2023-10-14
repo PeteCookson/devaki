@@ -1,8 +1,11 @@
-from django.core.validators import validate_email
-from django.core.exceptions import ValidationError
-from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.core.exceptions import ValidationError
+from django.core.validators import validate_email
+from django.shortcuts import redirect, render
 from .models import SubscribedUser
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 
 def subscribe_user(request):
     if request.method == 'POST':
@@ -15,7 +18,7 @@ def subscribe_user(request):
             return redirect("/")
 
         if SubscribedUser.objects.filter(email=email).exists():
-            messages.error(request, f"{email} email address is already a subscriber.")
+            messages.error(request, f"The email address {email} has already subscribed to our newsletter.")
             return redirect(request.META.get("HTTP_REFERER", "/"))
 
         try:
@@ -29,7 +32,17 @@ def subscribe_user(request):
         subscribe_model_instance.last_name = last_name
         subscribe_model_instance.email = email
         subscribe_model_instance.save()
-        messages.success(request, f'{email} email was successfully subscribed to our newsletter!')
+
+        # Send welcome email
+        subject = 'Welcome to our Newsletter!'
+        html_message = render_to_string('welcome_email.html', {'first_name': first_name})
+        plain_message = strip_tags(html_message)
+        from_email = 'pgcookson@gmail..com'  # Replace with your email address
+        to_email = email
+
+        send_mail(subject, plain_message, from_email, [to_email], html_message=html_message)
+
+        messages.success(request, f'The email address {email} was successfully subscribed to our newsletter!')
         return redirect(request.META.get("HTTP_REFERER", "/"))
 
     return redirect("/")

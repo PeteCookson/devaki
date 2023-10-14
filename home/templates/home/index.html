@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-
 {% load crispy_forms_tags %}
+
 <!-- Jumbotron -->
 <div class="callout-container container-fluid">
     <div class="opaque-overlay">&nbsp;</div>
@@ -39,33 +39,6 @@
         </div>
     </form>
 </div>
-<!-- {% if not user.is_authenticated %}
-            <section class="">
-                <form action="#" method="post">
-                    <div class="row d-flex justify-content-center">
-                    {% csrf_token %}
-
-                        <div class="col-auto">
-                            <p class="pt-2">Subscribe for our newsletter</p>
-                        </div>
-
-                        <div class="col-auto">
-                            <input id="name" name="name" class="form-control" placeholder="Your Name"/>
-                        </div>
-
-                        <div class="col-auto">
-                            <input id="email" name="email" type="email" class="form-control" placeholder="Email address"/>
-                        </div>
-
-                        <div class="col-auto">
-                            <button type="submit" class="btn btncolor">
-                                <i class="fa fa-arrow-circle-right fa-lg"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </section>
-        {% endif %} -->
 <!-- Info section -->
 <section>
     <div class="container-fluid">
@@ -137,9 +110,43 @@
         </div>
     </div>
 </section>
+<!-- Modal HTML -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                    {% if message.tags == 'success' %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                    {% elif message.tags == 'error' %}
+                    <div class="alert alert-danger">
+                        {{ message }}
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- JavaScript to show modal on page load and hide it after 3 seconds -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var messages = document.querySelectorAll('.alert');
+        if (messages.length > 0) {
+            var modal = new bootstrap.Modal(document.getElementById('myModal'));
+            modal.show();
+            setTimeout(function() {
+                modal.hide();
+            }, 3000);
+        }
+    });
+</script>
 
-
-
-
-{%endblock%}
+{% endblock %}
