@@ -35,9 +35,9 @@ def subscribe_user(request):
 
         # Send welcome email
         subject = 'Welcome to our Newsletter!'
-        html_message = render_to_string('welcome_email.html', {'first_name': first_name})
+        html_message = render_to_string('home/welcome_email.html', {'first_name': first_name})
         plain_message = strip_tags(html_message)
-        from_email = 'pgcookson@gmail..com'  # Replace with your email address
+        from_email = 'pgcookson@gmail.com'  # Replace with your email address
         to_email = email
 
         send_mail(subject, plain_message, from_email, [to_email], html_message=html_message)

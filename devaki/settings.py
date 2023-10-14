@@ -137,3 +137,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Crispy Forms settings
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587  # Replace with the appropriate port number
+EMAIL_HOST_USER = 'pgcookson@gmail.com'
+EMAIL_HOST_PASSWORD = 'pwfcuqbmrpxkoxje'  # Replace with your email password
+EMAIL_USE_TLS = True  # Use TLS encryption for secure connection
+DEFAULT_FROM_EMAIL = 'pgcookson@gmail.com.com'  # Replace with your email address
