@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
+from decouple import Config
+
+config = Config()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -141,8 +144,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587  # Replace with the appropriate port number
-EMAIL_HOST_USER = 'pgcookson@gmail.com'
-EMAIL_HOST_PASSWORD = 'pwfcuqbmrpxkoxje'  # Replace with your email password
-EMAIL_USE_TLS = True  # Use TLS encryption for secure connection
+EMAIL_PORT = 465  # Replace with the appropriate port number
+EMAIL_HOST_USER = config("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = True # Use TLS encryption for secure connection
 DEFAULT_FROM_EMAIL = 'pgcookson@gmail.com.com'  # Replace with your email address
